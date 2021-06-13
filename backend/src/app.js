@@ -1,4 +1,7 @@
 const express = require('express');
+var bodyParser = require('body-parser')
+
+const cors = require('cors');
 const path = require('path');
 
 
@@ -7,11 +10,14 @@ const indexRouter = require('./routes/index');
 const moviesRoutes = require('./routes/moviesRoutes');
 const genresRoutes = require('./routes/genresRoutes');
 const app = express();
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 // view engine setup
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 
+app.use(cors())
 app.use(express.static(path.resolve(__dirname, '../public')));
 
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body

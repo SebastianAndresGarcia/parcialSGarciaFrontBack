@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image'
-import Figure from 'react-bootstrap/Figure'
 import Navigation from './Navigation';
 class DetallePelicula extends Component {
 
@@ -34,6 +32,23 @@ class DetallePelicula extends Component {
 
     }
 
+    delete = (e) => {
+        console.log(e)
+        const parametroId = e
+
+        fetch('http://localhost:3001/movies/delete/' + parametroId, {
+            method: 'post',
+            mode: 'cors',
+            cache: 'default',
+
+        }).then((response) => {
+            if (response.status === 200) {
+                alert('Pelicula eliminada')
+                window.location.href = "/ListaPeliculas"
+            }
+        }).catch(e => console.log(e));
+
+    }
 
     render() {
 
@@ -41,12 +56,9 @@ class DetallePelicula extends Component {
 
         return (<React.Fragment>
             <Navigation></Navigation>
-           
-            <Container>
-                
-              
-                <h1>{peliencontrada.title}</h1>
 
+            <Container>
+                <h1>{peliencontrada.title}</h1>
                 <br />
                 <p>Rating: {peliencontrada.rating}</p>
                 <p>Premios: {peliencontrada.awards}</p>
@@ -54,7 +66,13 @@ class DetallePelicula extends Component {
                 <p>Fecha de estreno: {peliencontrada.release_date}</p>
                 <br />
                 <section>
+                    <Button className="botonModificar" href={`/Formulario/${peliencontrada.id}`}>
+                        Modificar
+                    </Button>
 
+                    <Button className="botonBorrar" onClick={this.delete.bind(this, peliencontrada.id)}>
+                        Borrar
+                    </Button>
                     <Button className="botonVolver" href="/ListaPeliculas">
                         Volver al Listado
                     </Button>
@@ -66,4 +84,4 @@ class DetallePelicula extends Component {
         );
     }
 }
-export default DetallePelicula  
+export default DetallePelicula

@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Tarjeta from './Tarjeta';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 class ListaPeliculas extends Component {
 
@@ -37,47 +38,53 @@ class ListaPeliculas extends Component {
     }
 
     render() {
-       /* const peliculas = this.state.db.map((pelicula, i) => {
-            return (
-                <Tarjeta key={pelicula.id} id={pelicula.id} pelicula={pelicula.title} lista='peliculas'></Tarjeta>
-            )
-        })
-        return (<React.Fragment>
-            <Navigation></Navigation>
-            <Container fluid="md" >
-                <link rel='stylesheet' href='/css/style.css' />
-                
-                <Col >
-                    <link rel='stylesheet' href='/css/style.css' />
-                    <h1><b>Listado de peliculas</b></h1>
-                    <br />
-                    
-                    <br />
-                    <br />
-
-                    <ul>
-                        {peliculas}
-                    </ul>
-                </Col>
-            </Container >
-        </React.Fragment>
-        );  */
-         const peliculas = this.state.db.map((pelicula, i) => {
-            return (
-                <Tarjeta key={pelicula.id} id={pelicula.id} pelicula={pelicula.title} lista='peliculas'></Tarjeta>
-            )
-        })
-         
-         return (
-             <React.Fragment>
-                 <Navigation></Navigation>
-                 <Container fluid="md">
-                     <Row>
+        /* const peliculas = this.state.db.map((pelicula, i) => {
+             return (
+                 <Tarjeta key={pelicula.id} id={pelicula.id} pelicula={pelicula.title} lista='peliculas'></Tarjeta>
+             )
+         })
+         return (<React.Fragment>
+             <Navigation></Navigation>
+             <Container fluid="md" >
+                 <link rel='stylesheet' href='/css/style.css' />
+                 
+                 <Col >
+                     <link rel='stylesheet' href='/css/style.css' />
+                     <h1><b>Listado de peliculas</b></h1>
+                     <br />
+                     
+                     <br />
+                     <br />
+ 
+                     <ul>
                          {peliculas}
-                     </Row>
-                 </Container>
-             </React.Fragment>
-         );  
+                     </ul>
+                 </Col>
+             </Container >
+         </React.Fragment>
+         );  */
+        const peliculas = this.state.db.map((pelicula, i) => {
+            return (
+                <Tarjeta key={pelicula.id} id={pelicula.id} pelicula={pelicula.title} lista='peliculas'></Tarjeta>
+            )
+        })
+
+        return (
+            <React.Fragment>
+                <Navigation></Navigation>
+                <br></br><section>
+                    <Button className="btonAgregar" href={`/Formulario/0`}>
+                        Agregar Pelicula
+                    </Button>
+                </section><br></br>
+                <Container fluid="md">
+                    <Row>
+                        {peliculas}
+                    </Row>
+                </Container>
+                <br></br>
+            </React.Fragment>
+        );
 
     }
 

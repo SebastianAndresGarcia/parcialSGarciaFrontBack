@@ -3,6 +3,7 @@ import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
 import ListaPeliculas from './components/ListaPeliculas';
 import DetallePelicula from './components/DetallePelicula';
+import Formulario from './components/Formulario';
 
 class App extends Component{
     
@@ -13,6 +14,7 @@ class App extends Component{
         <Route exact path="/home" component={Home} ></Route>
         <Route path="/listaPeliculas" component={ListaPeliculas} ></Route>
         <Route path="/DetallePelicula/:id" component={DetallePelicula} ></Route>
+        <Route path="/Formulario/:id" component={Formulario} ></Route>
       </Switch>
     ) 
   }
