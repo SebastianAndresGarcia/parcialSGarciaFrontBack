@@ -3,7 +3,6 @@ import Navigation from './Navigation';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Tarjeta from './Tarjeta';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 class ListaPeliculas extends Component {

@@ -14,7 +14,7 @@ class Home extends Component {
                 <h1 class="text-center">Bienvenido a Peliculas Online</h1>
                 <div align="center">
                 
-                    <img src="./images/poster.jpg"/>
+                    <img src="./images/poster.jpg" alt=""/>
                 
                 </div>
             </React.Fragment>
