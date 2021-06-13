@@ -14,13 +14,15 @@ const moviesController = {
     'list': (req, res) => {
         db.Movie.findAll()
             .then(movies => {
-                res.render('moviesList.ejs', {movies})
+              //  res.render('moviesList.ejs', {movies})
+              res.json(movies)
             })
     },
     'detail': (req, res) => {
         db.Movie.findByPk(req.params.id)
             .then(movie => {
-                res.render('moviesDetail.ejs', {movie});
+               // res.render('moviesDetail.ejs', {movie});
+               res.json(movie)
             });
     },
     'new': (req, res) => {
@@ -31,7 +33,8 @@ const moviesController = {
             limit: 5
         })
             .then(movies => {
-                res.render('newestMovies', {movies});
+               // res.render('newestMovies', {movies});
+               res.json(movies)
             });
     },
     'recomended': (req, res) => {
@@ -44,7 +47,8 @@ const moviesController = {
             ]
         })
             .then(movies => {
-                res.render('recommendedMovies.ejs', {movies});
+               // res.render('recommendedMovies.ejs', {movies});
+               res.json(movies)
             });
     },
     //Aqui dispongo las rutas para trabajar con el CRUD

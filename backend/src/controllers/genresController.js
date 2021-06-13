@@ -6,7 +6,8 @@ const genresController = {
     'list': (req, res) => {
         db.Genre.findAll()
             .then(genres => {
-                res.render('genresList.ejs', {genres})
+                res.json(genres)
+                //res.render('genresList.ejs', {genres})
             })
     },
     'detail': (req, res) => {
