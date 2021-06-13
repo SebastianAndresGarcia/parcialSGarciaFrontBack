@@ -153,8 +153,7 @@ class Formulario extends Component {
         return (
             <React.Fragment>
                 <Navigation></Navigation>
-                <link rel='stylesheet' href='/css/style.css' />
-                <div className="form-group">
+                <div className="center">
                     <h1 className="titulo">Agregar Película</h1>
                     <br />
                     <section className="formulario">
