@@ -14,7 +14,7 @@ class Navigation extends Component{
               <Navbar.Brand href="/home">INICIO</Navbar.Brand>
               <Nav className="mr-auto">
                
-                <Nav.Link href="/ListaPeliculas">LISTADO DE PELICULAS</Nav.Link>
+                <Nav.Link href="/listaPeliculas">LISTADO DE PELICULAS</Nav.Link>
                 
               </Nav>
              
